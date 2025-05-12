@@ -1,7 +1,7 @@
 # Cerberus Payload Builder 🔴
 
 ![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)
-[![Discord](https://img.shields.io/discord/YOUR_SERVER_ID?label=Discord&logo=discord&logoColor=white&color=7289DA&style=for-the-badge)](https://discord.gg/3ZSVqbbUwJ)
+[![Discord](https://discord.gg/3ZSVqbbUwJ)
 <!-- Replace YOUR_SERVER_ID and YOUR_DISCORD_INVITE_CODE -->
 <!-- You can generate more badges here: https://shields.io/ -->
 
