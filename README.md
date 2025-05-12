@@ -19,17 +19,12 @@ i  am not responsibile for what you do what so ever with this and if you sell it
 
 ## ✨ Core Features & Capabilities
 
-Cerberus Builder offers a robust set of features for efficient payload creation and information retrieval:
-
-*   **Intuitive GUI Builder**: A clean, themed graphical interface for easy configuration of all payload settings. Includes a built-in font size adjuster (`+`/`-` buttons) for enhanced user comfort and readability.
-*   **Comprehensive System Information Gathering**: Payloads can collect a wide array of data from the target Windows machine:
+**Data Retrival minimal
     *   🖥️ **Operating System Details**: Version, release, build, architecture.
     *   ⚙️ **Hardware Specifications**: CPU model, cores, frequency; total and available RAM; GPU information (via WMI on Windows).
     *   💾 **Disk Usage**: Mounted drives, filesystem type, total, used, and free space.
     *   🌐 **Network Configuration**:
     *   📊 **Real-time Progress & Logging**: A visual progress bar and a detailed build log area within the application provide feedback to the user throughout the compilation stages.
-*   **Standalone Windows Executables**: The builder generates single, portable `.exe` files. These payloads can run on target Windows machines without requiring Python or any external dependencies to be pre-installed, making deployment straightforward.
-*   **Organized & Maintainable Codebase**: The project is structured with a focus on readability and future development. Configuration constants, UI styling (QSS), and UI element setup are modularized into separate Python files (`app_config.py`, `ui_styler.py`, `ui_setup.py`).
 
 ---
 
