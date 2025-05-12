@@ -3,9 +3,9 @@
 <!-- Main Badges -->
 ![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg?style=for-the-badge&logo=python)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT) <!-- REPLACE WITH YOUR CHOSEN LICENSE -->
-[![GitHub Stars](https://img.shields.io/github/stars/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[Elysium]/CerberusMalware/stargazers) <!-- Replace [YourGitHubUsername] -->
-[![GitHub Forks](https://img.shields.io/github/forks/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[Elysium]/CerberusMalware/network/members) <!-- Replace [YourGitHubUsername] -->
-[![GitHub Issues](https://img.shields.io/github/issues/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[Elysium]/CerberusMalware/issues) <!-- Replace [YourGitHubUsername] -->
+[![GitHub Stars](https://img.shields.io/github/stars/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[Trinitysudo]/CerberusMalware/stargazers) <!-- Replace [YourGitHubUsername] -->
+[![GitHub Forks](https://img.shields.io/github/forks/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[Trinitysudo]/CerberusMalware/network/members) <!-- Replace [YourGitHubUsername] -->
+[![GitHub Issues](https://img.shields.io/github/issues/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[Trinitysudo]/CerberusMalware/issues) <!-- Replace [YourGitHubUsername] -->
 [![Discord](https://img.shields.io/discord/YOUR_SERVER_ID?label=Join%20Discord&logo=discord&logoColor=white&color=7289DA&style=for-the-badge)](https://discord.gg/3ZSVqbbUwJ) <!-- Replace YOUR_SERVER_ID -->
 
 <!-- Optional Social/Activity Badges -->
