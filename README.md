@@ -20,6 +20,7 @@ i  am not responsibile for what you do what so ever with this and if you sell it
 ## ✨ Core Features & Capabilities
 
 **Data Retrival minimal
+
     *   🖥️ **Operating System Details**: Version, release, build, architecture.
     *   ⚙️ **Hardware Specifications**: CPU model, cores, frequency; total and available RAM; GPU information (via WMI on Windows).
     *   💾 **Disk Usage**: Mounted drives, filesystem type, total, used, and free space.
