@@ -1,54 +1,88 @@
 # Cerberus Payload Builder 🛠️
 
-![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)
-[![Discord](https://img.shields.io/discord/YOUR_SERVER_ID?label=Join%20Our%20Discord&logo=discord&logoColor=white&color=7289DA&style=for-the-badge)](https://discord.gg/3ZSVqbbUwJ)
-<!-- Replace YOUR_SERVER_ID with your actual Discord Server ID -->
-<!-- You can generate more badges here: https://shields.io/ -->
+<!-- Main Badges -->
+![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg?style=for-the-badge&logo=python)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT) <!-- REPLACE WITH YOUR CHOSEN LICENSE -->
+[![GitHub Stars](https://img.shields.io/github/stars/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[YourGitHubUsername]/CerberusMalware/stargazers) <!-- Replace [YourGitHubUsername] -->
+[![GitHub Forks](https://img.shields.io/github/forks/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[YourGitHubUsername]/CerberusMalware/network/members) <!-- Replace [YourGitHubUsername] -->
+[![GitHub Issues](https://img.shields.io/github/issues/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[YourGitHubUsername]/CerberusMalware/issues) <!-- Replace [YourGitHubUsername] -->
+[![Discord](https://img.shields.io/discord/YOUR_SERVER_ID?label=Join%20Discord&logo=discord&logoColor=white&color=7289DA&style=for-the-badge)](https://discord.gg/3ZSVqbbUwJ) <!-- Replace YOUR_SERVER_ID -->
 
-**Cerberus Builder** is a Python GUI application (PyQt6) it is a R.A.T Builder (Remote Accese Tool) This is for proof of concept
+<!-- Optional Social/Activity Badges -->
+<!--
+[![GitHub last commit](https://img.shields.io/github/last-commit/[YourGitHubUsername]/CerberusMalware?style=flat-square&logo=github)](https://github.com/[YourGitHubUsername]/CerberusMalware/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/[YourGitHubUsername]/CerberusMalware?style=flat-square)](https://github.com/[YourGitHubUsername]/CerberusMalware)
+-->
 
-## ✨ Core Features
+**Cerberus Builder** is a Python (v3.9+) GUI application built with PyQt6, designed for internal IT departments and security professionals. It allows for the creation of customized Windows information-gathering payloads. These standalone executable payloads, when run on a target Windows system, collect a range of general system information and securely transmit it as a formatted embed message to a pre-configured Discord webhook URL. The project emphasizes ease of use through its intuitive graphical interface, payload customization options, and an asynchronous build process to maintain GUI responsiveness.
 
-*   **Intuitive GUI Builder**: Easy payload configuration with font size adjustment.
-*   **System Information**: Collects OS, CPU, RAM, disk, IP, geolocation, network details (MAC, IPs, gateway, Wi-Fi), and GPU info.
-*   **Discord Integration**: Sends data as formatted embeds to a specified webhook.
-*   **Payload Customization**: Custom `.ico` icon and EXE size inflation.
-*   **Asynchronous & Standalone**: Non-blocking GUI during compilation; generates single `.exe` payloads.
-*   **Organized Code**: Modular design for better maintainability.
+## ✨ Core Features & Capabilities
+
+Cerberus Builder offers a robust set of features for efficient payload creation and information retrieval:
+
+*   **Intuitive GUI Builder**: A clean, themed graphical interface for easy configuration of all payload settings. Includes a built-in font size adjuster (`+`/`-` buttons) for enhanced user comfort and readability.
+*   **Comprehensive System Information Gathering**: Payloads can collect a wide array of data from the target Windows machine:
+    *   🖥️ **Operating System Details**: Version, release, build, architecture.
+    *   ⚙️ **Hardware Specifications**: CPU model, cores, frequency; total and available RAM; GPU information (via WMI on Windows).
+    *   💾 **Disk Usage**: Mounted drives, filesystem type, total, used, and free space.
+    *   🌐 **Network Configuration**:
+        *   **Public IP & Geolocation**: Fetches external IP address and approximate location (city, region, country) and ISP details.
+        *   **Local Network Details**: All active network interfaces with their MAC addresses, assigned IPv4 and IPv6 addresses.
+        *   **Gateway & Wi-Fi**: Default gateway address and the SSID of the currently connected Wi-Fi network.
+*   **Secure & Formatted Data Exfiltration**:
+    *   💬 **Discord Webhook Integration**: Collected information is neatly packaged into a Discord embed message and sent to a user-specified webhook URL. This includes built-in retry logic for handling transient network issues, ensuring more reliable data delivery.
+*   **Payload Customization Options**:
+    *   🖼️ **Custom Payload Icon**: Users can specify a custom `.ico` file to be embedded as the icon for the generated executable, allowing for visual customization or subtle branding.
+    *   📦 **EXE Size Inflation ("Pumping")**: An option to inflate the final executable's size to a specified target (in MB) by appending null bytes. This can be useful in certain scenarios to alter the file's signature or meet specific size requirements.
+*   **Efficient & User-Friendly Build Process**:
+    *   ⚙️ **Asynchronous Compilation**: The payload compilation, which utilizes PyInstaller, is performed in a separate thread. This crucial feature prevents the GUI from freezing during the potentially time-consuming build process, allowing the user to continue interacting with the application.
+    *   📊 **Real-time Progress & Logging**: A visual progress bar and a detailed build log area within the application provide feedback to the user throughout the compilation stages.
+*   **Standalone Windows Executables**: The builder generates single, portable `.exe` files. These payloads can run on target Windows machines without requiring Python or any external dependencies to be pre-installed, making deployment straightforward.
+*   **Organized & Maintainable Codebase**: The project is structured with a focus on readability and future development. Configuration constants, UI styling (QSS), and UI element setup are modularized into separate Python files (`app_config.py`, `ui_styler.py`, `ui_setup.py`).
 
 ---
 
 ## 🖼️ Screenshots
 
-**(Coming Soon! Add screenshots of the Builder and a Discord report.)**
+**(Screenshots demonstrating the Builder GUI and an example Discord report are highly recommended here. Replace the placeholders below.)**
 
-*   **Cerberus Builder GUI:** `![Cerberus Builder GUI](path/to/your/builder_gui_screenshot.png)`
-*   **Sample Discord Embed:** `![Sample Discord Embed](path/to/your/discord_embed_screenshot.png)`
+*   **Cerberus Builder Interface:**
+    `![Cerberus Builder GUI](path/to/your/builder_gui_screenshot.png)`
+
+*   **Example Discord Report Embed:**
+    `![Sample Discord Embed](path/to/your/discord_embed_screenshot.png)`
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started & Usage
 
 ### Prerequisites
 
-*   Python 3.9+
-*   PyQt6, PyInstaller, and other dependencies (see `requirements.txt` section).
-*   A Discord Webhook URL.
+*   **Python 3.9 or higher**
+*   **Git** (for cloning the repository)
+*   A **Discord Webhook URL** for receiving reports from the generated payloads.
 
-### Installation
+### Installation & Setup
 
-1.  **Clone:**
+1.  **Clone the Repository:**
+    Open your terminal or command prompt and run:
     ```bash
     git clone https://github.com/[YourGitHubUsername]/CerberusMalware.git
     cd CerberusMalware
     ```
-    *(Replace `[YourGitHubUsername]`)*
+    *(Remember to replace `[YourGitHubUsername]` with your actual GitHub username!)*
 
-2.  **Install Dependencies (Create `requirements.txt` first):**
+2.  **Create and Activate a Virtual Environment (Highly Recommended):**
+    This keeps project dependencies isolated.
     ```bash
-    pip install -r requirements.txt
+    python -m venv venv
     ```
-    **`requirements.txt` content:**
+    Activate it:
+    *   Windows (Command Prompt/PowerShell): `.\venv\Scripts\activate`
+    *   macOS/Linux (Bash/Zsh): `source venv/bin/activate`
+
+3.  **Install Dependencies:**
+    The necessary Python packages are listed below. Create a file named `requirements.txt` in the project's root directory with the following content:
     ```
     PyQt6>=6.0.0
     requests>=2.25.0
@@ -57,42 +91,26 @@
     wmi; platform_system == "Windows"
     pywin32; platform_system == "Windows"
     ```
+    Then, install them using pip:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-### Running
+4.  **Configure Application Links (Optional but good for UI buttons):**
+    While not essential for core functionality, if you want the in-app link buttons to work correctly, open `app_config.py`. The Discord invite link is already set to yours. You can verify/update:
+    *   `YOUTUBE_URL = "https://www.youtube.com/@TrinityT"`
+    *   `GITHUB_URL = "https://github.com/Trinitysudo"`
 
+5.  **Prepare UI Icons:**
+    For the best visual experience, ensure the following icon files are present in the project root directory. If they are missing, the application will still run, but buttons might show fallback text.
+    *   `cerberus_icon.png`: For the builder application's window icon.
+    *   `cerberus_icon.ico`: The default icon for payloads if no custom one is selected (must be `.ico`).
+    *   `discord_icon.png`: For the Discord community link button.
+    *   `youtube_icon.png`: For the YouTube channel link button.
+    *   `github_icon.png`: For the GitHub profile link button.
+
+### Running the Cerberus Builder
+
+Once dependencies are installed, launch the builder application:
 ```bash
 python cerberus_app.py
-```
-
-## 🛠️ How to Use
-
-Launch cerberus_app.py.
-
-Enter your Discord Webhook URL.
-Customize Payload Filename, Icon, System Info inclusion, and EXE Size.
-Adjust GUI font size using +/- buttons.
-Click "Compile Payload".
-Find the .exe in the dist/ folder.
-
-
-## 📁 Project Structure Highlight
-
-cerberus_app.py: Main GUI
-app_config.py: Constants & Links
-ui_styler.py: Styling (QSS)
-ui_setup.py: GUI Layout
-system_info.py / webhook_utils.py: Payload logic
-
-## 🤝 Support & Community
-
-Issues/Suggestions: Open an Issue
-Join our Community:
-![alt text](https://img.shields.io/badge/Discord-Join%20Us-7289DA?style=flat&logo=discord)
-My Links:
-![alt text](https://img.shields.io/badge/YouTube-%40TrinityT-c4302b?style=social&logo=youtube)
-![alt text](https://img.shields.io/badge/GitHub-Trinitysudo-181717?style=social&logo=github)
-
-## ⚖️ Disclaimer
-
-This tool is for legitimate IT administration and educational use within authorized environments only. Misuse is strictly prohibited. Developers assume no liability for unauthorized use. Use responsibly and ethically.
-
