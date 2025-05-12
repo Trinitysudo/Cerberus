@@ -62,3 +62,37 @@
 
 ```bash
 python cerberus_app.py
+```
+
+## 🛠️ How to Use
+
+Launch cerberus_app.py.
+
+Enter your Discord Webhook URL.
+Customize Payload Filename, Icon, System Info inclusion, and EXE Size.
+Adjust GUI font size using +/- buttons.
+Click "Compile Payload".
+Find the .exe in the dist/ folder.
+
+
+## 📁 Project Structure Highlight
+
+cerberus_app.py: Main GUI
+app_config.py: Constants & Links
+ui_styler.py: Styling (QSS)
+ui_setup.py: GUI Layout
+system_info.py / webhook_utils.py: Payload logic
+
+## 🤝 Support & Community
+
+Issues/Suggestions: Open an Issue
+Join our Community:
+![alt text](https://img.shields.io/badge/Discord-Join%20Us-7289DA?style=flat&logo=discord)
+My Links:
+![alt text](https://img.shields.io/badge/YouTube-%40TrinityT-c4302b?style=social&logo=youtube)
+![alt text](https://img.shields.io/badge/GitHub-Trinitysudo-181717?style=social&logo=github)
+
+## ⚖️ Disclaimer
+
+This tool is for legitimate IT administration and educational use within authorized environments only. Misuse is strictly prohibited. Developers assume no liability for unauthorized use. Use responsibly and ethically.
+
