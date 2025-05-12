@@ -31,11 +31,8 @@ i  am not responsibile for what you do what so ever with this and if you sell it
 
 ## 🖼️ Screenshots
 
-**(Screenshots demonstrating the Builder GUI and an example Discord report are highly recommended here. Replace the placeholders below.)**
-
 *   **Cerberus Builder Interface:**
-    `![python3 12_OFbliKDQJ2](https://github.com/user-attachments/assets/68513890-e54a-4bcb-95a1-63b86644b215) `
-
+    ![GUI PREVIEW](https://github.com/user-attachments/assets/4c5b4455-ec74-469b-b081-2558f08069f5)
 
 *   **Example Discord Report Embed:**
     `![Sample Discord Embed](path/to/your/discord_embed_screenshot.png)`
