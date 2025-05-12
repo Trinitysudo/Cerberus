@@ -27,16 +27,6 @@ Cerberus Builder offers a robust set of features for efficient payload creation 
     *   ⚙️ **Hardware Specifications**: CPU model, cores, frequency; total and available RAM; GPU information (via WMI on Windows).
     *   💾 **Disk Usage**: Mounted drives, filesystem type, total, used, and free space.
     *   🌐 **Network Configuration**:
-        *   **Public IP & Geolocation**: Fetches external IP address and approximate location (city, region, country) and ISP details.
-        *   **Local Network Details**: All active network interfaces with their MAC addresses, assigned IPv4 and IPv6 addresses.
-        *   **Gateway & Wi-Fi**: Default gateway address and the SSID of the currently connected Wi-Fi network.
-*   **Secure & Formatted Data Exfiltration**:
-    *   💬 **Discord Webhook Integration**: Collected information is neatly packaged into a Discord embed message and sent to a user-specified webhook URL. This includes built-in retry logic for handling transient network issues, ensuring more reliable data delivery.
-*   **Payload Customization Options**:
-    *   🖼️ **Custom Payload Icon**: Users can specify a custom `.ico` file to be embedded as the icon for the generated executable, allowing for visual customization or subtle branding.
-    *   📦 **EXE Size Inflation ("Pumping")**: An option to inflate the final executable's size to a specified target (in MB) by appending null bytes. This can be useful in certain scenarios to alter the file's signature or meet specific size requirements.
-*   **Efficient & User-Friendly Build Process**:
-    *   ⚙️ **Asynchronous Compilation**: The payload compilation, which utilizes PyInstaller, is performed in a separate thread. This crucial feature prevents the GUI from freezing during the potentially time-consuming build process, allowing the user to continue interacting with the application.
     *   📊 **Real-time Progress & Logging**: A visual progress bar and a detailed build log area within the application provide feedback to the user throughout the compilation stages.
 *   **Standalone Windows Executables**: The builder generates single, portable `.exe` files. These payloads can run on target Windows machines without requiring Python or any external dependencies to be pre-installed, making deployment straightforward.
 *   **Organized & Maintainable Codebase**: The project is structured with a focus on readability and future development. Configuration constants, UI styling (QSS), and UI element setup are modularized into separate Python files (`app_config.py`, `ui_styler.py`, `ui_setup.py`).
