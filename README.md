@@ -5,9 +5,7 @@
 <!-- Replace YOUR_SERVER_ID with your actual Discord Server ID -->
 <!-- You can generate more badges here: https://shields.io/ -->
 
-**Cerberus Builder** is a Python GUI application (PyQt6) for IT departments to create custom information-gathering Windows payloads. Payloads collect system info and send it to a Discord webhook.
-
----
+**Cerberus Builder** is a Python GUI application (PyQt6) it is a R.A.T Builder (Remote Accese Tool) This is for proof of concept
 
 ## ✨ Core Features
 
@@ -46,13 +44,7 @@
     ```
     *(Replace `[YourGitHubUsername]`)*
 
-2.  **Virtual Environment (Recommended):**
-    ```bash
-    python -m venv venv
-    # Windows: .\venv\Scripts\activate  |  macOS/Linux: source venv/bin/activate
-    ```
-
-3.  **Install Dependencies (Create `requirements.txt` first):**
+2.  **Install Dependencies (Create `requirements.txt` first):**
     ```bash
     pip install -r requirements.txt
     ```
@@ -65,14 +57,6 @@
     wmi; platform_system == "Windows"
     pywin32; platform_system == "Windows"
     ```
-
-4.  **Configure Links (Optional):**
-    Update placeholders in `app_config.py` (Discord invite is already set to yours).
-    *   `YOUTUBE_URL = "https://www.youtube.com/@TrinityT"`
-    *   `GITHUB_URL = "https://github.com/Trinitysudo"`
-
-5.  **Prepare Icons:**
-    Ensure `cerberus_icon.png` (app), `cerberus_icon.ico` (payload), `discord_icon.png`, `youtube_icon.png`, `github_icon.png` are in the project root.
 
 ### Running
 
