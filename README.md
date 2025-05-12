@@ -1,44 +1,31 @@
-# Cerberus Payload Builder 🔴
+# Cerberus Payload Builder 🛠️
 
 ![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)
-[![Discord](https://discord.gg/3ZSVqbbUwJ)
-<!-- Replace YOUR_SERVER_ID and YOUR_DISCORD_INVITE_CODE -->
+[![Discord](https://img.shields.io/discord/YOUR_SERVER_ID?label=Join%20Our%20Discord&logo=discord&logoColor=white&color=7289DA&style=for-the-badge)](https://discord.gg/3ZSVqbbUwJ)
+<!-- Replace YOUR_SERVER_ID with your actual Discord Server ID -->
 <!-- You can generate more badges here: https://shields.io/ -->
 
-**Cerberus Builder** is a Python-based GUI application (using PyQt6) designed for internal IT departments to create customized information-gathering payloads. These payloads, when executed on a target Windows machine, collect general system information and securely send it to a pre-configured Discord webhook.
+**Cerberus Builder** is a Python GUI application (PyQt6) for IT departments to create custom information-gathering Windows payloads. Payloads collect system info and send it to a Discord webhook.
 
 ---
 
-## ✨ Features
+## ✨ Core Features
 
-*   **Intuitive GUI Builder**: Easily configure payload settings using a clean, themed graphical interface.
-    *   🖌️ **Customizable Appearance**: Includes a built-in font size adjuster for user comfort.
-*   **Targeted Information Gathering**:
-    *   🖥️ **General System Information**: Collects OS details, CPU, RAM, disk usage, IP address, geolocation (via public IP), network interface details (MAC, local IPs, gateway), connected Wi-Fi SSID, and GPU information (Windows via WMI).
-*   **Secure Data Exfiltration**:
-    *   💬 **Discord Integration**: Sends collected data as a formatted embed message to a specified Discord webhook URL. Includes retry logic for network requests.
-*   **Payload Customization**:
-    *   🖼️ **Custom Payload Icon**: Set a custom `.ico` file for the generated executable.
-    *   📦 **EXE Pumping**: Option to inflate the output executable to a specified size (MB) with null bytes, potentially aiding in certain analysis evasion scenarios.
-*   **Asynchronous Build Process**:
-    *   ⚙️ **Non-Blocking GUI**: Compiles payloads using PyInstaller in a separate thread, preventing the GUI from freezing.
-    *   📊 **Progress & Logging**: Visual progress bar and detailed build logs within the application.
-*   **Standalone Payloads**: Generates single, standalone Windows executables (`.exe`) that run without needing Python installed on the target machine.
-*   **Organized & Maintainable Code**: Refactored with configuration, UI styling, and UI setup separated into modules for better readability and future development.
+*   **Intuitive GUI Builder**: Easy payload configuration with font size adjustment.
+*   **System Information**: Collects OS, CPU, RAM, disk, IP, geolocation, network details (MAC, IPs, gateway, Wi-Fi), and GPU info.
+*   **Discord Integration**: Sends data as formatted embeds to a specified webhook.
+*   **Payload Customization**: Custom `.ico` icon and EXE size inflation.
+*   **Asynchronous & Standalone**: Non-blocking GUI during compilation; generates single `.exe` payloads.
+*   **Organized Code**: Modular design for better maintainability.
 
 ---
 
 ## 🖼️ Screenshots
 
-**(Coming Soon! Replace these with actual screenshots)**
+**(Coming Soon! Add screenshots of the Builder and a Discord report.)**
 
-*   **Cerberus Builder GUI:**
-    `[Link to Screenshot of Builder GUI]` or embed directly:
-    `![Cerberus Builder GUI](path/to/your/builder_gui_screenshot.png)`
-
-*   **Sample Discord Embed:**
-    `[Link to Screenshot of Discord Embed]` or embed directly:
-    `![Sample Discord Embed](path/to/your/discord_embed_screenshot.png)`
+*   **Cerberus Builder GUI:** `![Cerberus Builder GUI](path/to/your/builder_gui_screenshot.png)`
+*   **Sample Discord Embed:** `![Sample Discord Embed](path/to/your/discord_embed_screenshot.png)`
 
 ---
 
@@ -46,49 +33,48 @@
 
 ### Prerequisites
 
-*   **Python 3.9 or higher**
-*   **PyQt6** and other dependencies (can be installed via `requirements.txt`)
-*   **PyInstaller** (for compiling payloads) - The builder attempts to locate it in common Python script paths or expects it to be in your system's PATH.
-*   A **Discord Webhook URL** to send the reports to.
+*   Python 3.9+
+*   PyQt6, PyInstaller, and other dependencies (see `requirements.txt` section).
+*   A Discord Webhook URL.
 
-### Installation & Setup
+### Installation
 
-1.  **Clone the repository:**
+1.  **Clone:**
     ```bash
     git clone https://github.com/[YourGitHubUsername]/CerberusMalware.git
     cd CerberusMalware
     ```
-    *(Replace `[YourGitHubUsername]` with your actual GitHub username)*
+    *(Replace `[YourGitHubUsername]`)*
 
-2.  **Set up a virtual environment (recommended):**
+2.  **Virtual Environment (Recommended):**
     ```bash
     python -m venv venv
-    # On Windows
-    .\venv\Scripts\activate
-    # On macOS/Linux
-    source venv/bin/activate
+    # Windows: .\venv\Scripts\activate  |  macOS/Linux: source venv/bin/activate
     ```
 
-3.  **Install dependencies:**
-    *(Create a `requirements.txt` file first! See section below)*
+3.  **Install Dependencies (Create `requirements.txt` first):**
     ```bash
     pip install -r requirements.txt
     ```
+    **`requirements.txt` content:**
+    ```
+    PyQt6>=6.0.0
+    requests>=2.25.0
+    psutil>=5.8.0
+    PyInstaller>=5.0.0
+    wmi; platform_system == "Windows"
+    pywin32; platform_system == "Windows"
+    ```
 
-4.  **Configure Essential Links (Optional but Recommended):**
-    Open `app_config.py` and update the following placeholders with your actual links:
-    *   `DISCORD_INVITE_URL = "YOUR_DISCORD_INVITE_LINK_HERE"`
-    *   `YOUTUBE_URL = "https://www.youtube.com/@TrinityT"` (Already set to yours)
-    *   `GITHUB_URL = "https://github.com/Trinitysudo"` (Already set to yours)
+4.  **Configure Links (Optional):**
+    Update placeholders in `app_config.py` (Discord invite is already set to yours).
+    *   `YOUTUBE_URL = "https://www.youtube.com/@TrinityT"`
+    *   `GITHUB_URL = "https://github.com/Trinitysudo"`
 
 5.  **Prepare Icons:**
-    Ensure the following icon files are present in the project root directory (or update paths in `app_config.py` and `ui_setup.py`):
-    *   `cerberus_icon.png` (for the builder app window, ~32x32 or 64x64 recommended)
-    *   `cerberus_icon.ico` (default icon for generated payloads, must be `.ico`)
-    *   `discord_icon.png` (for the Discord link button, ~24x24)
-    *   `youtube_icon.png` (for the YouTube link button, ~24x24)
-    *   `github_icon.png` (for the GitHub link button, ~24x24)
+    Ensure `cerberus_icon.png` (app), `cerberus_icon.ico` (payload), `discord_icon.png`, `youtube_icon.png`, `github_icon.png` are in the project root.
 
-### Creating a `requirements.txt`
+### Running
 
-Based on the project files, your `requirements.txt` should look something like this:
+```bash
+python cerberus_app.py
