@@ -3,9 +3,9 @@
 <!-- Main Badges -->
 ![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg?style=for-the-badge&logo=python)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT) <!-- REPLACE WITH YOUR CHOSEN LICENSE -->
-[![GitHub Stars](https://img.shields.io/github/stars/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[YourGitHubUsername]/CerberusMalware/stargazers) <!-- Replace [YourGitHubUsername] -->
-[![GitHub Forks](https://img.shields.io/github/forks/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[YourGitHubUsername]/CerberusMalware/network/members) <!-- Replace [YourGitHubUsername] -->
-[![GitHub Issues](https://img.shields.io/github/issues/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[YourGitHubUsername]/CerberusMalware/issues) <!-- Replace [YourGitHubUsername] -->
+[![GitHub Stars](https://img.shields.io/github/stars/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[Elysium]/CerberusMalware/stargazers) <!-- Replace [YourGitHubUsername] -->
+[![GitHub Forks](https://img.shields.io/github/forks/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[Elysium]/CerberusMalware/network/members) <!-- Replace [YourGitHubUsername] -->
+[![GitHub Issues](https://img.shields.io/github/issues/[YourGitHubUsername]/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/[Elysium]/CerberusMalware/issues) <!-- Replace [YourGitHubUsername] -->
 [![Discord](https://img.shields.io/discord/YOUR_SERVER_ID?label=Join%20Discord&logo=discord&logoColor=white&color=7289DA&style=for-the-badge)](https://discord.gg/3ZSVqbbUwJ) <!-- Replace YOUR_SERVER_ID -->
 
 <!-- Optional Social/Activity Badges -->
@@ -14,7 +14,8 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/[YourGitHubUsername]/CerberusMalware?style=flat-square)](https://github.com/[YourGitHubUsername]/CerberusMalware)
 -->
 
-**Cerberus Builder** is a Python (v3.9+) GUI application built with PyQt6, designed for internal IT departments and security professionals. It allows for the creation of customized Windows information-gathering payloads. These standalone executable payloads, when run on a target Windows system, collect a range of general system information and securely transmit it as a formatted embed message to a pre-configured Discord webhook URL. The project emphasizes ease of use through its intuitive graphical interface, payload customization options, and an asynchronous build process to maintain GUI responsiveness.
+**Cerberus Builder** is a Python (v3.9+) GUI application built with PyQt6, designed for R.A.T (Remote Accese Tool) , made for proof of concept and to be the best not malcious
+i  am not responsibile for what you do what so ever with this and if you sell it i will slime you out (no kizzy)
 
 ## ✨ Core Features & Capabilities
 
@@ -72,16 +73,7 @@ Cerberus Builder offers a robust set of features for efficient payload creation 
     ```
     *(Remember to replace `[YourGitHubUsername]` with your actual GitHub username!)*
 
-2.  **Create and Activate a Virtual Environment (Highly Recommended):**
-    This keeps project dependencies isolated.
-    ```bash
-    python -m venv venv
-    ```
-    Activate it:
-    *   Windows (Command Prompt/PowerShell): `.\venv\Scripts\activate`
-    *   macOS/Linux (Bash/Zsh): `source venv/bin/activate`
-
-3.  **Install Dependencies:**
+2.  **Install Dependencies:**
     The necessary Python packages are listed below. Create a file named `requirements.txt` in the project's root directory with the following content:
     ```
     PyQt6>=6.0.0
@@ -96,18 +88,6 @@ Cerberus Builder offers a robust set of features for efficient payload creation 
     pip install -r requirements.txt
     ```
 
-4.  **Configure Application Links (Optional but good for UI buttons):**
-    While not essential for core functionality, if you want the in-app link buttons to work correctly, open `app_config.py`. The Discord invite link is already set to yours. You can verify/update:
-    *   `YOUTUBE_URL = "https://www.youtube.com/@TrinityT"`
-    *   `GITHUB_URL = "https://github.com/Trinitysudo"`
-
-5.  **Prepare UI Icons:**
-    For the best visual experience, ensure the following icon files are present in the project root directory. If they are missing, the application will still run, but buttons might show fallback text.
-    *   `cerberus_icon.png`: For the builder application's window icon.
-    *   `cerberus_icon.ico`: The default icon for payloads if no custom one is selected (must be `.ico`).
-    *   `discord_icon.png`: For the Discord community link button.
-    *   `youtube_icon.png`: For the YouTube channel link button.
-    *   `github_icon.png`: For the GitHub profile link button.
 
 ### Running the Cerberus Builder
 
