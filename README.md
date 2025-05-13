@@ -52,23 +52,13 @@ i  am not responsibile for what you do what so ever with this and if you sell it
 1.  **Clone the Repository:**
     Open your terminal or command prompt and run:
     ```bash
-    git clone https://github.com/[YourGitHubUsername]/CerberusMalware.git
+    git clone https://github.com/[trinitysudo]/CerberusMalware.git
     cd CerberusMalware
     ```
-    *(Remember to replace `[YourGitHubUsername]` with your actual GitHub username!)*
 
 2.  **Install Dependencies:**
-    The necessary Python packages are listed below. Create a file named `requirements.txt` in the project's root directory with the following content:
-    ```
-    PyQt6>=6.0.0
-    requests>=2.25.0
-    psutil>=5.8.0
-    PyInstaller>=5.0.0
-    wmi; platform_system == "Windows"
-    pywin32; platform_system == "Windows"
-    ```
-    Then, install them using pip:
-    ```bash
+    
+    ```Open CMD in Root folder (cerberus malware) and run the  command
     pip install -r requirements.txt
     ```
 
