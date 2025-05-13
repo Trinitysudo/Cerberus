@@ -36,6 +36,7 @@ i  am not responsibile for what you do what so ever with this and if you sell it
 ## 🖼️ Screenshots
 
 *   **Cerberus Builder Interface:**
+*   
     ![GUI PREVIEW](https://github.com/user-attachments/assets/4c5b4455-ec74-469b-b081-2558f08069f5)
 
 *   **Example Discord Report Embed:**
