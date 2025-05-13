@@ -21,15 +21,15 @@ i  am not responsibile for what you do what so ever with this and if you sell it
 
 **Data Retrival minimal
 
-       🖥️ **Operating System Details**: Version, release, build, architecture.
+ .🖥️ **Operating System Details**: Version, release, build, architecture.
     
-       ⚙️ **Hardware Specifications**: CPU model, cores, frequency; total and available RAM; GPU information (via WMI on Windows).
+ .⚙️ **Hardware Specifications**: CPU model, cores, frequency; total and available RAM; GPU information (via WMI on Windows).
     
-       💾 **Disk Usage**: Mounted drives, filesystem type, total, used, and free space.
+ .💾 **Disk Usage**: Mounted drives, filesystem type, total, used, and free space.
     
-       🌐 **Network Configuration**:
+ . 🌐 **Network Configuration**:
     
-       📊 **Real-time Progress & Logging**: A visual progress bar and a detailed build log area within the application provide feedback to the user throughout the compilation stages.
+ . 📊 **Real-time Progress & Logging**: A visual progress bar and a detailed build log area within the application provide feedback to the user throughout the compilation stages.
 
 ---
 
