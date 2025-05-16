@@ -5,19 +5,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT) <!-- Ensure this matches your chosen license -->
 [![Discord](https://img.shields.io/discord/YOUR_SERVER_ID?label=Join%20Discord&logo=discord&logoColor=white&color=7289DA&style=for-the-badge)](https://discord.gg/3ZSVqbbUwJ) <!-- Replace YOUR_SERVER_ID with your actual Discord Server ID -->
 
-<!-- Optional Social/Activity Badges (Uncomment and fill if desired) -->
-<!--
-[![GitHub last commit](https://img.shields.io/github/last-commit/Trinitysudo/CerberusMalware?style=flat-square&logo=github)](https://github.com/Trinitysudo/CerberusMalware/commits/main)
-[![GitHub repo size](https://img.shields.io/github/repo-size/Trinitysudo/CerberusMalware?style=flat-square)](https://github.com/Trinitysudo/CerberusMalware)
--->
-
 **Cerberus Builder** is a Python (v3.9+) GUI application built with PyQt6, designed for creating payloads that gather system information and can optionally offer more interactive capabilities. This tool is intended as a **proof-of-concept** and for **educational purposes only** to demonstrate information gathering techniques, payload generation, and basic remote interaction concepts.
 
 ⚠️ **Disclaimer:** This tool is for educational use ONLY. You are solely responsible for your actions. Unauthorized access to computer systems is illegal. The developers assume no liability and are not responsible for any misuse or damage caused by this program.
 
 ## ✨ Core Features
-
-### Information Gathering (Payload Capabilities):
 
 *   🖥️ **Operating System Details**: Version, release, build, architecture.
 *   ⚙️ **Hardware Specifications**: CPU model, cores, frequency; total/available RAM; GPU info (Windows via WMI).
@@ -48,15 +40,18 @@
 ## 🖼️ Screenshots
 
 *   **Cerberus Builder Interface (Main Tab):**
+*   
     ![GUI PREVIEW](https://github.com/user-attachments/assets/1c549e43-1baa-4795-932b-8275851c9d26)
 
 *   **Cerberus Builder Interface (Real-time Tab):**
-    `<!-- ![Screenshot of Real-time Tab](path/to/your/real_time_tab_screenshot.png) -->`
-    <!-- Add a screenshot of your "Real-time" tab here and uncomment -->
+*    ![GUI PREVIEW]![python3 12_qpeJhfxdSw](https://github.com/user-attachments/assets/6a3f7db3-83ea-4fe9-957c-f0562c3f329b)
 
-*   **Example Discord Report Embed:**
-    `<!-- ![Sample Discord Embed](path/to/your/discord_embed_screenshot.png) -->`
-    <!-- Add your Discord embed screenshot here and uncomment -->
+
+
+
+*   **Example Discord Report Embed:**![NVIDIA_Overlay_LeQUXPUGWp](https://github.com/user-attachments/assets/2149edfc-052b-475d-b042-8f2217adbacd)
+
+
 
 ---
 
