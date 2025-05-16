@@ -65,28 +65,32 @@
 
 ### Prerequisites
 
-*   **Python 3.9 or higher**
-*   **Git** (for cloning the repository)
-*   A **Discord Webhook URL** (for receiving initial reports from generated payloads).
-*   *(Add any other prerequisites specific to the bot/real-time functionality, e.g., a server endpoint if not using Discord for commands).*
+*   Python 3.9 or higher
+*   Git (for cloning the repository)
+*   A **Discord Bot Token**. You can create a bot and get its token from the [Discord Developer Portal](https://discord.com/developers/applications).
 
 ### Installation & Setup
 
 1.  **Clone the Repository:**
     ```bash
-    git clone https://github.com/Trinitysudo/CerberusMalware.git
+    git clone https://github.com/[YourGitHubUsername]/CerberusMalware.git
     cd CerberusMalware
     ```
-    *(If you've forked this, replace `Trinitysudo` with your GitHub username).*
 
 2.  **Install Dependencies:**
-    Navigate to the project's root folder (`CerberusMalware`) in your terminal or command prompt and run:
     ```bash
     pip install -r requirements.txt
     ```
 
-### Running the Cerberus Builder
+3.  **Configure Your Discord Bot Token:**
+    Open the `app_config.py` file in a text editor.
+    Locate the line:
+    ```python
+    DISCORD_BOT_TOKEN = "YOUR_DISCORD_BOT_TOKEN_HERE"
+    ```
+    **Replace `"YOUR_DISCORD_BOT_TOKEN_HERE"` with your actual Discord Bot Token.**
 
-Once dependencies are installed, launch the builder application:
-```bash
-python main.py
+    **Alternatively (Recommended for better security):**
+    You can set an environment variable named `DISCORD_BOT_TOKEN` with your token value. If this environment variable is set, the `app_config.py` file will use it.
+
+### Running the Cerberus Builder
