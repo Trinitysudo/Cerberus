@@ -41,13 +41,13 @@
 
 *   **Cerberus Builder Interface (Main Tab):**
 *   
-    ![GUI PREVIEW](https://github.com/user-attachments/assets/1c549e43-1baa-4795-932b-8275851c9d26)
+     ![GUI PREVIEW](https://github.com/user-attachments/assets/1c549e43-1baa-4795-932b-8275851c9d26)
 
 *   **Cerberus Builder Interface (Real-time Tab):**
 *    ![GUI PREVIEW]![python3 12_qpeJhfxdSw](https://github.com/user-attachments/assets/6a3f7db3-83ea-4fe9-957c-f0562c3f329b)
 
 *   **Example Discord Report Embed (IP OPTIONS NOT INCLUDED):**
-    ![NVIDIA_Overlay_LeQUXPUGWp](https://github.com/user-attachments/assets/2149edfc-052b-475d-b042-8f2217adbacd)
+     ![NVIDIA_Overlay_LeQUXPUGWp](https://github.com/user-attachments/assets/2149edfc-052b-475d-b042-8f2217adbacd)
 
 
 
