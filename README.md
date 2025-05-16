@@ -19,8 +19,6 @@ i  am not responsibile for what you do what so ever with this and if you sell it
 
 ## ✨ Core Features & Capabilities
 
-**Data Retrival minimal
-
  .🖥️ **Operating System Details**: Version, release, build, architecture.
     
  .⚙️ **Hardware Specifications**: CPU model, cores, frequency; total and available RAM; GPU information (via WMI on Windows).
@@ -37,7 +35,8 @@ i  am not responsibile for what you do what so ever with this and if you sell it
 
 *   **Cerberus Builder Interface:**
 *   
-    ![GUI PREVIEW](https://github.com/user-attachments/assets/4c5b4455-ec74-469b-b081-2558f08069f5)
+    ![GUI PREVIEW]![preview](https://github.com/user-attachments/assets/1c549e43-1baa-4795-932b-8275851c9d26)
+
 
 *   **Example Discord Report Embed:**
     `![Sample Discord Embed](path/to/your/discord_embed_screenshot.png)`
@@ -72,4 +71,4 @@ i  am not responsibile for what you do what so ever with this and if you sell it
 
 Once dependencies are installed, launch the builder application:
 ```bash
-python cerberus_app.py
+python main.py
