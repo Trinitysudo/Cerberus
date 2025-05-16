@@ -16,25 +16,6 @@
 *   💾 **Disk Usage**: Mounted drives, filesystem type, total, used, and free space.
 *   🌐 **Network Configuration**: Details about network interfaces.
 
-### 🤖 Optional Bot Functionality & Real-time Interaction (Payload Capabilities):
-
-*   **Interactive Agent Mode**: Payloads can be configured to operate in a more persistent "bot" mode.
-    *   *(Describe what this mode enables, e.g., "Allows the payload to listen for basic commands sent via a configured channel," or "Enables continuous data streaming to a specified endpoint.")*
-*   **Configuration via "Real-time" Tab**:
-    *   The **"Real-time" tab** in the Cerberus Builder GUI is used to enable and configure these advanced features for the payload.
-    *   This may include settings such as:
-        *   Connection parameters (e.g., C2 server address/port, different from the Discord webhook for initial reports).
-        *   Check-in intervals.
-        *   Specific commands the payload should listen for.
-        *   Data streaming options.
-    *   *(Be specific here about what can be configured in your "Real-time" tab for the bot functionality).*
-*   **Updating Bot Behavior**: To change the bot's behavior or commands it responds to, you would typically re-configure these settings in the "Real-time" tab and generate a new payload.
-    *   *(If the "Real-time" tab ALSO allows sending live commands or updates to an ALREADY RUNNING payload, clarify that here. E.g., "The 'Real-time' tab may also provide an interface to send commands to active bots, if a C2 communication channel is established.")*
-
-### Builder Application Features:
-
-*   📊 **Real-time Progress & Logging**: A visual progress bar and a detailed build log area within the application provide feedback during payload compilation.
-
 
 ---
 
@@ -63,6 +44,25 @@
 
 
 ---
+
+### 🤖 Optional Bot Functionality & Real-time Interaction (Payload Capabilities):
+
+*   **Interactive Agent Mode**: Payloads can be configured to operate in a more persistent "bot" mode.
+    *   *(Describe what this mode enables, e.g., "Allows the payload to listen for basic commands sent via a configured channel," or "Enables continuous data streaming to a specified endpoint.")*
+*   **Configuration via "Real-time" Tab**:
+    *   The **"Real-time" tab** in the Cerberus Builder GUI is used to enable and configure these advanced features for the payload.
+    *   This may include settings such as:
+        *   Connection parameters (e.g., C2 server address/port, different from the Discord webhook for initial reports).
+        *   Check-in intervals.
+        *   Specific commands the payload should listen for.
+        *   Data streaming options.
+    *   *(Be specific here about what can be configured in your "Real-time" tab for the bot functionality).*
+*   **Updating Bot Behavior**: To change the bot's behavior or commands it responds to, you would typically re-configure these settings in the "Real-time" tab and generate a new payload.
+    *   *(If the "Real-time" tab ALSO allows sending live commands or updates to an ALREADY RUNNING payload, clarify that here. E.g., "The 'Real-time' tab may also provide an interface to send commands to active bots, if a C2 communication channel is established.")*
+
+### Builder Application Features:
+
+*   📊 **Real-time Progress & Logging**: A visual progress bar and a detailed build log area within the application provide feedback during payload compilation.
 
 ## 🚀 Getting Started
 
