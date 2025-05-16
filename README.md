@@ -35,20 +35,31 @@
 
 *   📊 **Real-time Progress & Logging**: A visual progress bar and a detailed build log area within the application provide feedback during payload compilation.
 
+
 ---
 
 ## 🖼️ Screenshots
 
-*   **Cerberus Builder Interface (Main Tab):**
-*   
-     ![GUI PREVIEW](https://github.com/user-attachments/assets/1c549e43-1baa-4795-932b-8275851c9d26)
+<!-- Using an HTML table to align images. Adjust `width` as needed for responsiveness. -->
+<table>
+  <tr>
+    <td align="center" valign="top">
+      <strong>Cerberus Builder Interface (Main Tab)</strong><br>
+      <img src="https://github.com/user-attachments/assets/1c549e43-1baa-4795-932b-8275851c9d26" alt="Cerberus Builder GUI - Main Tab" width="300"/>
+    </td>
+    <td align="center" valign="top">
+      <strong>Cerberus Builder Interface (Real-time Tab)</strong><br>
+      <img src="https://github.com/user-attachments/assets/6a3f7db3-83ea-4fe9-957c-f0562c3f329b" alt="Cerberus Builder GUI - Real-time Tab" width="300"/>
+    </td>
+    <td align="center" valign="top">
+      <strong>Example Discord Report Embed</strong><br>
+      <em>(IP Options Not Included)</em><br>
+      <img src="https://github.com/user-attachments/assets/2149edfc-052b-475d-b042-8f2217adbacd" alt="Example Discord Report Embed" width="300"/>
+    </td>
+  </tr>
+</table>
 
-*   **Cerberus Builder Interface (Real-time Tab):**
-*    ![GUI PREVIEW]![python3 12_qpeJhfxdSw](https://github.com/user-attachments/assets/6a3f7db3-83ea-4fe9-957c-f0562c3f329b)
-
-*   **Example Discord Report Embed (IP OPTIONS NOT INCLUDED):**
-     ![NVIDIA_Overlay_LeQUXPUGWp](https://github.com/user-attachments/assets/2149edfc-052b-475d-b042-8f2217adbacd)
-
+---
 
 
 ---
