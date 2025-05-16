@@ -1,0 +1,6 @@
+PyQt6>=6.0.0
+requests>=2.25.0
+psutil>=5.8.0
+PyInstaller>=5.0.0
+wmi; platform_system == "Windows"
+pywin32; platform_system == "Windows"

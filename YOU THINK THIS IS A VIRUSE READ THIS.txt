@@ -1,0 +1,155 @@
+=======================================
+Cerberus Builder - Project Documentation
+=======================================
+
+-------------------
+I. PROJECT OVERVIEW
+-------------------
+
+Cerberus Builder is a Python GUI application developed using PyQt6. Its primary purpose is to allow a user to configure and generate different forms of a "payload." 
+When this payload is executed on a target Windows machine, it gathers system information (based on user selections in the Builder) and sends this data as a formatted message to a pre-configured Discord webhook URL (the "Results Webhook").
+
+A key feature currently under development is "Live Execution Mode." When a payload is generated in this mode, it not only sends an initial system report but also stays running in the background. The Cerberus Builder GUI can then send commands (e.g., take a screenshot, show a message) to these live payloads via a Discord Bot acting as an intermediary. This avoids direct P2P networking complexities.
+
+--------------------
+II. HOW IT WORKS
+--------------------
+
+1.  **Builder GUI (CerberusBuilderApp in `cerberus_gui.py`):**
+    *   The user interacts with a PyQt6 graphical interface.
+    *   **Configuration:** The user specifies:
+        *   The "Results Webhook URL" where the payload will send its findings.
+        *   The desired output filename for the payload (e.g., `MyPayload.exe`).
+        *   An optional custom icon (`.ico`) for the generated executable.
+        *   Whether to "pump" (inflate) the size of the final `.exe`.
+        *   Which categories of system information the payload should collect (e.g., System Overview, Hardware, Network, Storage).
+        *   Whether to enable "Live Execution Mode."
+    *   **Build Process (`BuildWorker` in `build_worker.py`):**
+        *   When the "Generate Payload" button is clicked, the configuration is passed to a `BuildWorker` instance.
+        *   This worker runs in a separate QThread to keep the GUI responsive.
+        *   `file_utils.py` dynamically generates a temporary Python script (`payload_script_temp.py`) based on the user's selections. This script includes:
+            *   Calls to functions in `system_info.py` to gather selected data.
+            *   Logic to send this data to the Results Webhook using `webhook_utils.py`.
+            *   If Live Execution Mode is enabled:
+                *   Code to generate a Unique `PAYLOAD_INSTANCE_ID`.
+                *   The Discord Bot Token and Command Channel ID (from `app_config.py`) are embedded.
+                *   Logic to start the payload's own Discord bot listener (`payload_discord_client.py`) after the initial report.
+        *   **PyInstaller Integration:** The `BuildWorker` then uses PyInstaller to compile `payload_script_temp.py` (along with necessary helper modules like `system_info.py`, `webhook_utils.py`, and the `live_payload_components` package) into a standalone Windows executable (`.exe`).
+        *   The GUI displays progress and logs from the build process.
+    *   **Output Types:** The builder can (or is planned to) produce:
+        *   Standalone `.exe` (the primary payload).
+        *   The raw generated Python script (`.py`).
+        *   A batch file launcher (`.bat`). (Currently focused on .exe and .py script generation)
+
+2.  **Generated Payload (when executed on a target machine):**
+    *   **Initial Report:**
+        *   Gathers system information as configured using functions from the bundled `system_info.py`.
+        *   Formats this data into a Discord embed.
+        *   Sends the embed to the "Results Webhook URL" using the bundled `webhook_utils.py`.
+    *   **Live Execution Mode:**
+        *   If enabled during build:
+            *   After sending the initial report (which includes its unique `PAYLOAD_INSTANCE_ID`), the payload starts its own Discord bot client (logic from the bundled `live_payload_components/payload_discord_client.py`).
+            *   This client connects to Discord using the embedded Bot Token and listens for messages in the embedded Command Channel ID.
+            *   It parses incoming messages, looking for JSON commands.
+            *   If a command's `target_id` matches its `PAYLOAD_INSTANCE_ID`, it extracts the `action` and `args`.
+            *   It calls the corresponding function in the bundled `live_payload_components/payload_actions.py` (e.g., `show_message_box`, `take_screenshot`).
+            *   The action function then typically sends a status update or result (like a screenshot file) back to the "Results Webhook URL".
+            *   The payload remains running, listening for more commands.
+
+3.  **Live Command Center (in Builder GUI - `cerberus_gui.py`):**
+    *   The user can select the "Live Command Center" tab.
+    *   **Sending Commands:**
+        *   The user enters the `Target Payload ID` (obtained from the payload's initial check-in message on the Results Webhook).
+        *   They select an `Action` from a dropdown (e.g., "Take Screenshot").
+        *   They provide any necessary `Arguments` for the action.
+        *   Clicking "Send Command" triggers the Builder's sender client (`live_payload_components/builder_sender_client.py`).
+        *   This client, using the Bot Token from `app_config.py`, formats a JSON command message (containing target ID, action, args) and sends it to the Command Channel ID on Discord.
+    *   The targeted live payload (if online and listening) picks up this command and executes it.
+
+4.  **Discord as C2 (Command and Control):**
+    *   Discord acts as the communication channel between the Builder and the live payloads.
+    *   **Results Webhook:** Used by payloads to send back all information (initial reports, action statuses, files). This is a one-way street into Discord.
+    *   **Command Channel & Bot Token:** Used for two-way command and control in Live Execution Mode.
+        *   The Builder *sends* commands *as the bot* to the Command Channel.
+        *   The Payload *listens* for messages *as the same bot* in the Command Channel.
+    *   This avoids direct IP connections, port forwarding, and simplifies firewall traversal.
+
+----------------------
+III. FILE LAYOUT & RATIONALE
+----------------------
+
+The project is organized into several Python files and a few directories to promote modularity, readability, and separation of concerns.
+
+*   **`F:/Cerebus/` (Project Root)**
+    *   **`main.py`**:
+        *   **Purpose:** The main entry point for starting the Cerberus Builder application.
+        *   **Rationale:** Keeps the startup sequence minimal and clean. Imports and runs the main GUI class.
+    *   **`cerberus_gui.py`**:
+        *   **Purpose:** Contains the `CerberusBuilderApp` class, which defines the main application window (QMainWindow), its UI elements, event handling (button clicks, etc.), and orchestrates the build process and command sending.
+        *   **Rationale:** Centralizes all GUI-related logic and user interaction management. This is the "brain" of the Builder application.
+    *   **`app_config.py`**:
+        *   **Purpose:** Stores global constants, application settings (like version, title), default values, theme colors, Discord Webhook URLs, the Bot Token, and the Command Channel ID.
+        *   **Rationale:** Centralizes configuration for easy modification without digging through code. Avoids hardcoding values.
+    *   **`ui_setup.py`**:
+        *   **Purpose:** Contains the `setup_main_window_ui` function, responsible for creating and arranging all the graphical widgets (buttons, labels, input fields, tabs, etc.) within the main window.
+        *   **Rationale:** Separates the UI *structure* definition from its *behavioral* logic (which is in `cerberus_gui.py`), making UI changes easier.
+    *   **`ui_styler.py`**:
+        *   **Purpose:** Contains the `apply_app_styles` function, which defines and applies QSS (Qt Style Sheets) to customize the visual appearance (theme) of the application.
+        *   **Rationale:** Separates visual styling from UI structure and logic, allowing for easier theme changes.
+    *   **`build_worker.py`**:
+        *   **Purpose:** Defines the `BuildWorker` class (a QObject designed to run in a QThread). It handles the potentially long-running tasks of generating the payload script and compiling it with PyInstaller, ensuring the GUI remains responsive.
+        *   **Rationale:** Prevents the GUI from freezing during the build process by offloading intensive work to a background thread.
+    *   **`file_utils.py`**:
+        *   **Purpose:** Contains functions for:
+            *   `generate_payload_script_content()`: Dynamically creates the Python code for the payload (`payload_script_temp.py`) based on settings from the Builder. This is where the payload's core logic, including live mode components, is assembled.
+            *   `pump_file()`: Inflates the size of the generated executable if requested.
+        *   **Rationale:** Isolates the logic for constructing the payload's source code.
+    *   **`system_info.py`**:
+        *   **Purpose:** A collection of modular functions that the *payload* uses to gather specific system information (e.g., OS details, hardware specs, network info).
+        *   **Rationale:** Organizes information-gathering routines into reusable functions. This file is bundled with the payload by PyInstaller.
+    *   **`webhook_utils.py`**:
+        *   **Purpose:** Provides utility functions (`send_to_discord`, `send_to_discord_with_files`) for sending formatted data (embeds and files) to Discord webhooks. Used by both the initial payload report and by payload actions to send back results.
+        *   **Rationale:** Centralizes Discord webhook communication logic. Bundled with the payload.
+
+*   **`F:/Cerebus/icons/` (Directory)**
+    *   **Purpose:** Stores image files used by the application (e.g., `cerberus_icon.png` for the app window, `cerberus_icon.ico` as a default for payloads, social media icons for links).
+    *   **Rationale:** Keeps graphical assets organized in one place.
+
+*   **`F:/Cerebus/live_payload_components/` (Directory/Package)**
+    *   **Purpose:** Contains Python modules specifically related to the "Live Execution Mode" functionality, for both the Builder and the Payload.
+    *   **`__init__.py`**: An empty file that makes this directory a Python package, allowing for cleaner imports (e.g., `from live_payload_components import ...`).
+    *   **`builder_sender_client.py`**:
+        *   **Purpose:** Contains the Discord bot client logic used by the **Builder GUI** to *send* command messages to the Command Channel. It initializes a bot instance, manages its connection (in a separate thread), and provides a function to send formatted command strings.
+        *   **Rationale:** Isolates the Builder's Discord communication logic for sending commands.
+    *   **`payload_discord_client.py`**:
+        *   **Purpose:** Contains the Discord bot client logic that will be embedded into and run by the **generated Payload** when in Live Execution Mode. It connects to Discord, listens for messages in the Command Channel, parses commands, and dispatches them to `payload_actions.py`.
+        *   **Rationale:** Encapsulates the payload's ability to receive and process commands via Discord. This file is bundled with the payload by PyInstaller (as part of the `live_payload_components` package).
+    *   **`payload_actions.py`**:
+        *   **Purpose:** Contains the actual Python functions that the **payload** executes when it receives a valid command (e.g., `show_message_box()`, `take_screenshot()`). These functions often report their status/results back via the Results Webhook.
+        *   **Rationale:** Separates the command execution logic from the command listening/parsing logic, making it easy to add new actions. This file is bundled with the payload.
+
+---------------------------------------------
+IV. IMPORTANT CONSIDERATIONS & RESPONSIBILITY
+---------------------------------------------
+
+This tool, especially with its Live Execution Mode, grants significant capabilities. 
+The ability to remotely execute code, gather information, and control aspects of a target system should be handled with extreme care and ethical consideration.
+
+**WITH GREAT POWER COMES GREAT RESPONSIBILITY.**
+
+*   **Ethical Use:** Only use this tool on systems for which you have explicit, authorized permission. Unauthorized access or use is illegal and unethical.
+*   **Security:**
+    *   **Bot Token:** Your Discord Bot Token (`DISCORD_BOT_TOKEN` in `app_config.py`) is extremely sensitive. It grants full control over your bot. **NEVER share it publicly or commit it to public repositories.** Treat it like a password. If compromised, regenerate it immediately from the Discord Developer Portal.
+    *   **Webhook URLs:** While not as critical as a bot token, webhook URLs should also be protected. Anyone with a webhook URL can send messages to that channel.
+*   **Legality:** Be aware of and comply with all applicable local, national, and international laws regarding computer access, data privacy, and software deployment.
+*   **Purpose:** This project is intended for educational purposes, to understand application development, GUI programming, system interaction, and network communication concepts. It should not be used for malicious activities.
+
+--------------------
+V. FUTURE DEVELOPMENT
+--------------------
+(You can add sections here as you plan more features)
+*   Refining argument passing for more complex actions.
+*   Implementing more actions in `payload_actions.py` (e.g., file system browsing, process listing, keylogging - all with major ethical caveats).
+*   Error handling and reporting improvements.
+*   Securely managing and distributing Bot Tokens/Channel IDs if multiple users were to use the builder.
+*   UI enhancements.
