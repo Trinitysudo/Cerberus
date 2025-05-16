@@ -60,9 +60,6 @@
 *   **Updating Bot Behavior**: To change the bot's behavior or commands it responds to, you would typically re-configure these settings in the "Real-time" tab and generate a new payload.
     *   *(If the "Real-time" tab ALSO allows sending live commands or updates to an ALREADY RUNNING payload, clarify that here. E.g., "The 'Real-time' tab may also provide an interface to send commands to active bots, if a C2 communication channel is established.")*
 
-### Builder Application Features:
-
-*   📊 **Real-time Progress & Logging**: A visual progress bar and a detailed build log area within the application provide feedback during payload compilation.
 
 ## 🚀 Getting Started
 
