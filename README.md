@@ -3,7 +3,7 @@
 <!-- Main Badges -->
 ![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg?style=for-the-badge&logo=python)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT) <!-- Ensure this matches your chosen license -->
-[![Discord](https://img.shields.io/discord/YOUR_SERVER_ID?label=Join%20Discord&logo=discord&logoColor=white&color=7289DA&style=for-the-badge)](https://discord.gg/ngFx385N2u) <!-- Replace YOUR_SERVER_ID with your actual Discord Server ID -->
+[![Discord](https://img.shields.io/discord/1342536420107092071?label=Join%20Discord&logo=discord&logoColor=white&color=7289DA&style=for-the-badge)](https://discord.gg/ngFx385N2u) <!-- Replace YOUR_SERVER_ID with your actual Discord Server ID -->
 
 **Cerberus Builder** is a Python (v3.9+) GUI application built with PyQt6, designed for creating payloads that gather system information and can optionally offer more interactive capabilities. This tool is intended as a **proof-of-concept** and for **educational purposes only** to demonstrate information gathering techniques, payload generation, and basic remote interaction concepts.
 
