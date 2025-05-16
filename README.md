@@ -3,9 +3,6 @@
 <!-- Main Badges -->
 ![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg?style=for-the-badge&logo=python)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT) <!-- Ensure this matches your chosen license -->
-[![GitHub Stars](https://img.shields.io/github/stars/Trinitysudo/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/Trinitysudo/CerberusMalware/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/Trinitysudo/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/Trinitysudo/CerberusMalware/network/members)
-[![GitHub Issues](https://img.shields.io/github/issues/Trinitysudo/CerberusMalware?style=for-the-badge&logo=github)](https://github.com/Trinitysudo/CerberusMalware/issues)
 [![Discord](https://img.shields.io/discord/YOUR_SERVER_ID?label=Join%20Discord&logo=discord&logoColor=white&color=7289DA&style=for-the-badge)](https://discord.gg/3ZSVqbbUwJ) <!-- Replace YOUR_SERVER_ID with your actual Discord Server ID -->
 
 <!-- Optional Social/Activity Badges (Uncomment and fill if desired) -->
@@ -14,33 +11,52 @@
 [![GitHub repo size](https://img.shields.io/github/repo-size/Trinitysudo/CerberusMalware?style=flat-square)](https://github.com/Trinitysudo/CerberusMalware)
 -->
 
-**Cerberus Builder** is a Python (v3.9+) GUI application built with PyQt6, designed for creating payloads that gather system information. This tool is intended as a **proof-of-concept** and for **educational purposes only** to demonstrate information gathering techniques and payload generation.
+**Cerberus Builder** is a Python (v3.9+) GUI application built with PyQt6, designed for creating payloads that gather system information and can optionally offer more interactive capabilities. This tool is intended as a **proof-of-concept** and for **educational purposes only** to demonstrate information gathering techniques, payload generation, and basic remote interaction concepts.
 
 ⚠️ **Disclaimer:** This tool is for educational use ONLY. You are solely responsible for your actions. Unauthorized access to computer systems is illegal. The developers assume no liability and are not responsible for any misuse or damage caused by this program.
 
 ## ✨ Core Features
 
-The generated payloads can gather:
+### Information Gathering (Payload Capabilities):
 
 *   🖥️ **Operating System Details**: Version, release, build, architecture.
 *   ⚙️ **Hardware Specifications**: CPU model, cores, frequency; total/available RAM; GPU info (Windows via WMI).
 *   💾 **Disk Usage**: Mounted drives, filesystem type, total, used, and free space.
 *   🌐 **Network Configuration**: Details about network interfaces.
 
-The builder application itself provides:
+### 🤖 Optional Bot Functionality & Real-time Interaction (Payload Capabilities):
 
-*   📊 **Real-time Progress & Logging**: A visual progress bar and a detailed build log area.
+*   **Interactive Agent Mode**: Payloads can be configured to operate in a more persistent "bot" mode.
+    *   *(Describe what this mode enables, e.g., "Allows the payload to listen for basic commands sent via a configured channel," or "Enables continuous data streaming to a specified endpoint.")*
+*   **Configuration via "Real-time" Tab**:
+    *   The **"Real-time" tab** in the Cerberus Builder GUI is used to enable and configure these advanced features for the payload.
+    *   This may include settings such as:
+        *   Connection parameters (e.g., C2 server address/port, different from the Discord webhook for initial reports).
+        *   Check-in intervals.
+        *   Specific commands the payload should listen for.
+        *   Data streaming options.
+    *   *(Be specific here about what can be configured in your "Real-time" tab for the bot functionality).*
+*   **Updating Bot Behavior**: To change the bot's behavior or commands it responds to, you would typically re-configure these settings in the "Real-time" tab and generate a new payload.
+    *   *(If the "Real-time" tab ALSO allows sending live commands or updates to an ALREADY RUNNING payload, clarify that here. E.g., "The 'Real-time' tab may also provide an interface to send commands to active bots, if a C2 communication channel is established.")*
+
+### Builder Application Features:
+
+*   📊 **Real-time Progress & Logging**: A visual progress bar and a detailed build log area within the application provide feedback during payload compilation.
 
 ---
 
 ## 🖼️ Screenshots
 
-*   **Cerberus Builder Interface:**
+*   **Cerberus Builder Interface (Main Tab):**
     ![GUI PREVIEW](https://github.com/user-attachments/assets/1c549e43-1baa-4795-932b-8275851c9d26)
+
+*   **Cerberus Builder Interface (Real-time Tab):**
+    `<!-- ![Screenshot of Real-time Tab](path/to/your/real_time_tab_screenshot.png) -->`
+    <!-- Add a screenshot of your "Real-time" tab here and uncomment -->
 
 *   **Example Discord Report Embed:**
     `<!-- ![Sample Discord Embed](path/to/your/discord_embed_screenshot.png) -->`
-    <!-- Add your Discord embed screenshot here and uncomment the line above -->
+    <!-- Add your Discord embed screenshot here and uncomment -->
 
 ---
 
@@ -50,7 +66,8 @@ The builder application itself provides:
 
 *   **Python 3.9 or higher**
 *   **Git** (for cloning the repository)
-*   A **Discord Webhook URL** (if you intend to use the Discord reporting feature of the generated payloads).
+*   A **Discord Webhook URL** (for receiving initial reports from generated payloads).
+*   *(Add any other prerequisites specific to the bot/real-time functionality, e.g., a server endpoint if not using Discord for commands).*
 
 ### Installation & Setup
 
